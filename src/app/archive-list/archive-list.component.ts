@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Archive{
-  id: number;
-  name: string;
-  path: string;
-}
+import { ArchiveService } from '../archive.service';
+import { Archive } from '../multimedia-archive-fe.interfaces';
 
 @Component({
   selector: 'app-archive-list',
@@ -13,11 +9,12 @@ export interface Archive{
 })
 export class ArchiveListComponent implements OnInit {
 
-  public archives: Array<Archive> = [{ id: 1, name: 'prova', path: 'prova'}];
-
-  constructor() { }
+  constructor(private archiveService: ArchiveService) { }
 
   ngOnInit(): void {
   }
 
+  public get archives(): Array<Archive> {
+    return this.archiveService.archives;
+  }
 }

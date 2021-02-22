@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ArchiveListComponent } from './archive-list/archive-list.component';
 import { InsertArchiveComponent } from './insert-archive/insert-archive.component';
 import { ArchiveDetailComponent } from './archive-detail/archive-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArchiveListComponent,
     InsertArchiveComponent,
-    ArchiveDetailComponent
+    ArchiveDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

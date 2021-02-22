@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InsertArchiveComponent } from './insert-archive.component';
+import { CreateArchiveComponent } from './create-archive.component';
 
-describe('InsertArchiveComponent', () => {
-  let component: InsertArchiveComponent;
-  let fixture: ComponentFixture<InsertArchiveComponent>;
+describe('CreateArchiveComponent', () => {
+  let component: CreateArchiveComponent;
+  let fixture: ComponentFixture<CreateArchiveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InsertArchiveComponent ]
+      declarations: [ CreateArchiveComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InsertArchiveComponent);
+    fixture = TestBed.createComponent(CreateArchiveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

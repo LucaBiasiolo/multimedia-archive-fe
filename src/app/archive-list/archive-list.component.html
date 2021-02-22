@@ -2,6 +2,6 @@
 <ul>
   <li *ngFor="let archive of archives">
     {{ archive.name }}
-    <a mat-raised-button color="primary" routerLink="/archive/{{ archive.id }}">Dettaglio</a>
+    <button mat-raised-button color="primary" routerLink="/archive/{{ archive.id }}">Dettaglio</button>
   </li>
 </ul>

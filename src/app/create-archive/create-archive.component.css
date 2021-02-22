@@ -1,0 +1,6 @@
+form{
+  display: table;
+}
+mat-form-field{
+  display: block;
+}

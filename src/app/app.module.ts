@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArchiveListComponent } from './archive-list/archive-list.component';
-import { InsertArchiveComponent } from './insert-archive/insert-archive.component';
+import { CreateArchiveComponent } from './create-archive/create-archive.component';
 import { ArchiveDetailComponent } from './archive-detail/archive-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -12,7 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     ArchiveListComponent,
-    InsertArchiveComponent,
+    CreateArchiveComponent,
     ArchiveDetailComponent,
     PageNotFoundComponent
   ],

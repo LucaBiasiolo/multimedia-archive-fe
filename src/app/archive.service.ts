@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Archive } from './archive-list/archive-list.component';
+import { Archive } from './multimedia-archive-fe.interfaces';
 
 @Injectable({
   providedIn: 'root'

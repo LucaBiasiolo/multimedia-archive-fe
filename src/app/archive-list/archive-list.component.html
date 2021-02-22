@@ -1,2 +1,7 @@
-<p>archive-list works!</p>
-<!-- Implementare lista archivi con bottone dettaglio -->
+<p>Lista archivi</p>
+<ul>
+  <li *ngFor="let archive of archives">
+    {{ archive.name }}
+    <a mat-raised-button color="primary" routerLink="/archive/{{ archive.id }}">Dettaglio</a>
+  </li>
+</ul>

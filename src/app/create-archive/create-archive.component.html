@@ -1,2 +1,20 @@
-<p>create-archive works!</p>
-<!-- Implementare form per creazione archivio -->
+Nuovo archivio
+<form [formGroup]="createArchiveForm" (ngSubmit)="submitForm()">
+  <mat-form-field>
+    <mat-label>Nome:</mat-label>
+    <input matInput type="text" formControlName="name">
+    <mat-error  *ngIf="getFormControlName('name').hasError('required')">
+      Campo obbligatorio
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Percorso:</mat-label>
+    <input type="file" formControlName="path">
+    <mat-error  *ngIf="getFormControlName('path').hasError('required')">
+      Campo obbligatorio
+    </mat-error>
+  </mat-form-field>
+  <p>
+    <button mat-raised-button color="primary" [disabled]="createArchiveForm.invalid">Crea Archivio</button>
+  </p>
+</form>

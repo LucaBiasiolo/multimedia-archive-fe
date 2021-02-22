@@ -7,6 +7,7 @@ import { ArchiveListComponent } from './archive-list/archive-list.component';
 import { CreateArchiveComponent } from './create-archive/create-archive.component';
 import { ArchiveDetailComponent } from './archive-detail/archive-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

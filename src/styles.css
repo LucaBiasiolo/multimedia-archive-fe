@@ -13,3 +13,13 @@ h1 a, h1 a:visited{
   font-weight: bold;
   margin: 20px 0;
 }
+
+.magazzino-snackbar{
+  color: white;
+  background-color: #3f51b5;
+}
+
+.magazzino-alert{
+  color: white;
+  background-color: darkred;
+}

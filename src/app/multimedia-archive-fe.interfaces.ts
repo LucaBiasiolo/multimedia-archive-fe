@@ -1,4 +1,4 @@
-export interface Archive{
+export interface IArchive {
   id: number;
   name: string;
   path: string;

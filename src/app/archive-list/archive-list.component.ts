@@ -9,12 +9,12 @@ import { IArchive } from '../core/multimedia-archive-fe.interfaces';
 })
 export class ArchiveListComponent implements OnInit {
 
-  constructor(private archiveService: ArchiveService) { }
+  public archives: Array<IArchive>;
 
-  public ngOnInit(): void {
+  constructor(private archiveService: ArchiveService) {
+    this.archives = this.archiveService.archives;
   }
 
-  public get archives(): Array<IArchive> {
-    return this.archiveService.archives;
+  public ngOnInit(): void {
   }
 }

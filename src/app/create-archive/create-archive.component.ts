@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IArchive } from '../core/multimedia-archive-fe.interfaces';
+import { ArchiveService } from '../core/services/archive.service';
 
 @Component({
   selector: 'app-create-archive',
@@ -10,7 +12,7 @@ export class CreateArchiveComponent implements OnInit {
 
   public createArchiveForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private archiveService: ArchiveService) { }
 
   public getFormControlName(name: string): AbstractControl {
     return this.createArchiveForm.get(name);
@@ -23,6 +25,8 @@ export class CreateArchiveComponent implements OnInit {
     });
   }
 
-  public submitForm(): void {}
-
+  public submitForm(): void {
+    const newArchive: IArchive = this.createArchiveForm.value;
+    this.archiveService.createArchive(newArchive);
+  }
 }

@@ -6,7 +6,7 @@ import { IArchive } from '../multimedia-archive-fe.interfaces';
 })
 export class ArchiveService {
 
-  private archivesArray: Array<IArchive> = [{ id: 1, name: 'prova', path: 'prova'}];
+  private archivesArray: Array<IArchive> = [{ id: 1, name: 'Archivio prova 1', path: 'prova 1'}];
 
   constructor() { }
 
@@ -14,4 +14,12 @@ export class ArchiveService {
     return this.archivesArray;
   }
 
+  public createArchive(newArchive: IArchive): void {
+    newArchive.id = this.archivesArray.length + 1;
+    this.archivesArray.push(newArchive);
+  }
+
+  public getArchiveById(id: number): IArchive {
+    return this.archivesArray.find( (archive: IArchive): boolean => archive.id === id);
+  }
 }

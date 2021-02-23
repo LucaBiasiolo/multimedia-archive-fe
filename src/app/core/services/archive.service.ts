@@ -14,9 +14,9 @@ export class ArchiveService {
     return this.archivesArray;
   }
 
-  public createArchive(newArchive: IArchive): void {
+  public createArchive(newArchive: IArchive): boolean {
     newArchive.id = this.archivesArray.length + 1;
-    this.archivesArray.push(newArchive);
+    return this.archivesArray.push(newArchive) ? true : false;
   }
 
   public getArchiveById(id: number): IArchive {

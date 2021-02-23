@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 import { IArchive } from '../core/multimedia-archive-fe.interfaces';
 import { ArchiveService } from '../core/services/archive.service';
 
@@ -12,7 +13,7 @@ export class CreateArchiveComponent implements OnInit {
 
   public createArchiveForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private archiveService: ArchiveService) { }
+  constructor(private formBuilder: FormBuilder, private archiveService: ArchiveService, private snackBar: MatSnackBar) { }
 
   public getFormControlName(name: string): AbstractControl {
     return this.createArchiveForm.get(name);
@@ -27,6 +28,11 @@ export class CreateArchiveComponent implements OnInit {
 
   public submitForm(): void {
     const newArchive: IArchive = this.createArchiveForm.value;
-    this.archiveService.createArchive(newArchive);
+    const success: boolean = this.archiveService.createArchive(newArchive);
+    if (success) {
+      this.snackBar.open('Archivio creato correttamente');
+    } else {
+      this.snackBar.open('Errore durante la creazione dell\'archivio', '', { panelClass: 'magazzino-alert'});
+    }
   }
 }

@@ -64,6 +64,7 @@
       true,
       "as-needed"
     ],
+    "ordered-imports": false,
     "quotemark": [
       true,
       "single"
@@ -82,6 +83,7 @@
         "named": "never"
       }
     },
+    "trailing-comma":false,
     "typedef": [
       true,
       "call-signature"

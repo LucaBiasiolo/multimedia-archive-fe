@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArchiveService } from '../archive.service';
-import { IArchive } from '../multimedia-archive-fe.interfaces';
+import { ArchiveService } from '../core/services/archive.service';
+import { IArchive } from '../core/multimedia-archive-fe.interfaces';
 
 @Component({
   selector: 'app-archive-list',

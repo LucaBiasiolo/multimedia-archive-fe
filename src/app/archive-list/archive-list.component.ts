@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ArchiveService } from '../archive.service';
-import { Archive } from '../multimedia-archive-fe.interfaces';
+import { IArchive } from '../multimedia-archive-fe.interfaces';
 
 @Component({
   selector: 'app-archive-list',
+  styleUrls: ['./archive-list.component.css'],
   templateUrl: './archive-list.component.html',
-  styleUrls: ['./archive-list.component.css']
 })
 export class ArchiveListComponent implements OnInit {
 
   constructor(private archiveService: ArchiveService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
-  public get archives(): Array<Archive> {
+  public get archives(): Array<IArchive> {
     return this.archiveService.archives;
   }
 }

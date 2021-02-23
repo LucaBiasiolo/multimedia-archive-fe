@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, interval } from 'rxjs';
+import { interval, Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page-not-found',
-  templateUrl: './page-not-found.component.html',
   styleUrls: ['./page-not-found.component.css'],
+  templateUrl: './page-not-found.component.html',
 })
 export class PageNotFoundComponent implements OnInit {
 

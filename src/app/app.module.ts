@@ -12,21 +12,21 @@ import { MatInputModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     ArchiveListComponent,
     CreateArchiveComponent,
     ArchiveDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }

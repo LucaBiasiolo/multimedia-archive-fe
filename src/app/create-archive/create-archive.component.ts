@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-archive',
@@ -10,13 +10,17 @@ export class CreateArchiveComponent implements OnInit {
 
   public createArchiveForm: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   public getFormControlName(name: string): AbstractControl {
     return this.createArchiveForm.get(name);
   }
 
   public ngOnInit(): void {
+    this.createArchiveForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      path: ['', Validators.required]
+    });
   }
 
   public submitForm(): void {}

@@ -1,4 +1,4 @@
-Nuovo archivio
+<p>Nuovo archivio</p>
 <form [formGroup]="createArchiveForm" (ngSubmit)="submitForm()">
   <mat-form-field>
     <mat-label>Nome:</mat-label>
@@ -9,7 +9,7 @@ Nuovo archivio
   </mat-form-field>
   <mat-form-field>
     <mat-label>Percorso:</mat-label>
-    <input type="file" formControlName="path">
+    <input matInput type="text" formControlName="path">
     <mat-error  *ngIf="getFormControlName('path').hasError('required')">
       Campo obbligatorio
     </mat-error>

@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IArchive } from '../multimedia-archive-fe.interfaces';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { IArchive, IMultimediaArchiveAPIResponse } from '../multimedia-archive-fe.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +10,16 @@ import { IArchive } from '../multimedia-archive-fe.interfaces';
 export class ArchiveService {
 
   private archivesArray: Array<IArchive> = [{ id: 1, name: 'Archivio prova 1', path: 'prova 1'}];
+  private archivesURL: string = 'http://localhost:8080/multimedia-archive-be/be/archives';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public get archives(): Array<IArchive> {
-    return this.archivesArray;
+  public get archives(): Observable<IArchive[]> {
+    return this.http.get(this.archivesURL).pipe(
+      map( (body: IMultimediaArchiveAPIResponse): Array<IArchive> => {
+        return body.response;
+      })
+    );
   }
 
   public createArchive(newArchive: IArchive): boolean {
@@ -20,6 +28,7 @@ export class ArchiveService {
   }
 
   public getArchiveById(id: number): IArchive {
-    return this.archivesArray.find( (archive: IArchive): boolean => archive.id === id);
+    // TODO: Da implementare
+    return null;
   }
 }

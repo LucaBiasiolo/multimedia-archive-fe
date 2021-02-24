@@ -12,7 +12,11 @@ export class ArchiveListComponent implements OnInit {
   public archives: Array<IArchive>;
 
   constructor(private archiveService: ArchiveService) {
-    this.archives = this.archiveService.archives;
+    this.archiveService.archives.subscribe(
+      (archives: IArchive[]): void => {
+        this.archives = archives;
+      }
+    );
   }
 
   public ngOnInit(): void {

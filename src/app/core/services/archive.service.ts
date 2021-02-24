@@ -27,8 +27,11 @@ export class ArchiveService {
     return this.archivesArray.push(newArchive) ? true : false;
   }
 
-  public getArchiveById(id: number): IArchive {
-    // TODO: Da implementare
-    return null;
+  public getArchiveById(id: number): Observable<IArchive> {
+    return this.http.get(`${this.archivesURL}/${id}`).pipe(
+      map( (body: IMultimediaArchiveAPIResponse): IArchive => {
+        return body.response;
+      })
+    );
   }
 }

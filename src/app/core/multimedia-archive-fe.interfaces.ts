@@ -3,3 +3,9 @@ export interface IArchive {
   name: string;
   path: string;
 }
+
+export interface IMultimediaArchiveAPIResponse {
+  status: string;
+  response: any;
+  messages: Array<string>;
+}

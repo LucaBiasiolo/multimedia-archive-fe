@@ -10,12 +10,14 @@ import { ArchiveService } from '../core/services/archive.service';
 })
 export class ArchiveDetailComponent implements OnInit {
 
-  public archive: IArchive;
+  public archive: IArchive; // TODO: Risolvere errore visualizzazione su componente
 
   constructor(private activatedRoute: ActivatedRoute, private archiveService: ArchiveService) {
     this.activatedRoute.params.subscribe( (params: Params): void => {
       const id: number = Number(params.id);
-      this.archive = this.archiveService.getArchiveById(id);
+      this.archiveService.getArchiveById(id).subscribe( (archive: IArchive): void => {
+        this.archive = archive;
+      });
     });
   }
 

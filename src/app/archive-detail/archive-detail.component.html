@@ -1,5 +1,6 @@
 <p *ngIf="archive">Archivio {{ archive.name }}</p>
-<a mat-raised-button color="primary">Apri in explorer</a> <!--TODO-->
-<button mat-raised-button color="primary" type="button">Sposta</button>
-<button mat-raised-button color="primary" type="button">Elimina</button>
-<button mat-raised-button color="primary" type="button">Rinomina file</button>
+<button mat-raised-button color="primary" type="button" aria-label="Apri in Explorer" data-balloon-pos="up">Apri</button>
+<button mat-raised-button color="primary" type="button" aria-label="Aggiungi file da cartella" data-balloon-pos="up">Aggiungi file</button>
+<button mat-raised-button color="primary" type="button" aria-label="Sposta archivio" data-balloon-pos="up">Sposta</button>
+<button mat-raised-button color="primary" type="button" aria-label="Elimina archivio" data-balloon-pos="up">Elimina</button>
+<button mat-raised-button color="primary" type="button" aria-label="Rinomina file" data-balloon-pos="up">Rinomina file</button>

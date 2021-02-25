@@ -89,6 +89,7 @@
   },
   "dependencies": {
     "@angular/elements": "^7.2.12",
-    "@angular/material": "^7.3.7"
+    "@angular/material": "^7.3.7",
+    "balloon-css": "^1.2.0"
   }
 }

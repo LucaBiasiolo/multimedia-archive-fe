@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { IArchive } from '../core/multimedia-archive-fe.interfaces';
 import { ArchiveService } from '../core/services/archive.service';
@@ -10,7 +10,7 @@ import { ArchiveService } from '../core/services/archive.service';
 })
 export class ArchiveDetailComponent implements OnInit {
 
-  public archive: IArchive; // TODO: Risolvere errore visualizzazione su componente
+  public archive: IArchive = null;
 
   constructor(private activatedRoute: ActivatedRoute, private archiveService: ArchiveService) {
     this.activatedRoute.params.subscribe( (params: Params): void => {
@@ -23,5 +23,4 @@ export class ArchiveDetailComponent implements OnInit {
 
   public ngOnInit(): void {
   }
-
 }

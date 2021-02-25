@@ -9,7 +9,6 @@ import { IArchive, IMultimediaArchiveAPIResponse } from '../multimedia-archive-f
 })
 export class ArchiveService {
 
-  private archivesArray: Array<IArchive> = [{ id: 1, name: 'Archivio prova 1', path: 'prova 1'}];
   private archivesURL: string = 'http://localhost:8080/multimedia-archive-be/be/archives';
 
   constructor(private http: HttpClient) { }
@@ -22,9 +21,12 @@ export class ArchiveService {
     );
   }
 
-  public createArchive(newArchive: IArchive): boolean {
-    newArchive.id = this.archivesArray.length + 1;
-    return this.archivesArray.push(newArchive) ? true : false;
+  public createArchive(newArchive: IArchive): Observable<IArchive> {
+    return this.http.post(this.archivesURL, newArchive).pipe(
+      map( (body: IMultimediaArchiveAPIResponse): IArchive => {
+        return body.response;
+      })
+    );
   }
 
   public getArchiveById(id: number): Observable<IArchive> {

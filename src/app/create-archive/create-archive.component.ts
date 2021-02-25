@@ -28,11 +28,12 @@ export class CreateArchiveComponent implements OnInit {
 
   public submitForm(): void {
     const newArchive: IArchive = this.createArchiveForm.value;
-    const success: boolean = this.archiveService.createArchive(newArchive);
-    if (success) {
-      this.snackBar.open('Archivio creato correttamente');
-    } else {
-      this.snackBar.open('Errore durante la creazione dell\'archivio', '', { panelClass: 'magazzino-alert'});
-    }
+    this.archiveService.createArchive(newArchive).subscribe( (addedArchive: IArchive) => {
+      if (addedArchive) {
+        this.snackBar.open('Archivio creato correttamente');
+      } else {
+        this.snackBar.open('Errore durante la creazione dell\'archivio', '', { panelClass: 'magazzino-alert'});
+      }
+    });
   }
 }

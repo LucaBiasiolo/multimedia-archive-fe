@@ -2,6 +2,7 @@
 <ul>
   <li *ngFor="let archive of archives">
     {{ archive.name }}
-    <button mat-raised-button color="primary" routerLink="/archive/{{ archive.id }}">Dettaglio</button>
+    <button mat-raised-button aria-label="Dettaglio Archivio" data-balloon-pos="up" color="primary" 
+      routerLink="/archive/{{ archive.id }}">Dettaglio</button>
   </li>
 </ul>

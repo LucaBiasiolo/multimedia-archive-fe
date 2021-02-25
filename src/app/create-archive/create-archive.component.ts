@@ -6,7 +6,7 @@ import { ArchiveService } from '../core/services/archive.service';
 
 @Component({
   selector: 'app-create-archive',
-  styleUrls: ['./create-archive.component.css'],
+  styleUrls: ['./create-archive.component.scss'],
   templateUrl: './create-archive.component.html',
 })
 export class CreateArchiveComponent implements OnInit {

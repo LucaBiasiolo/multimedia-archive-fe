@@ -4,7 +4,7 @@ import { IArchive } from '../core/multimedia-archive-fe.interfaces';
 
 @Component({
   selector: 'app-archive-list',
-  styleUrls: ['./archive-list.component.css'],
+  styleUrls: ['./archive-list.component.scss'],
   templateUrl: './archive-list.component.html',
 })
 export class ArchiveListComponent implements OnInit {

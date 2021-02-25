@@ -5,7 +5,7 @@ import { ArchiveService } from '../core/services/archive.service';
 
 @Component({
   selector: 'app-archive-detail',
-  styleUrls: ['./archive-detail.component.css'],
+  styleUrls: ['./archive-detail.component.scss'],
   templateUrl: './archive-detail.component.html',
 })
 export class ArchiveDetailComponent implements OnInit {

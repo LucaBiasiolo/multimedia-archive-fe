@@ -5,7 +5,7 @@ import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page-not-found',
-  styleUrls: ['./page-not-found.component.css'],
+  styleUrls: ['./page-not-found.component.scss'],
   templateUrl: './page-not-found.component.html',
 })
 export class PageNotFoundComponent implements OnInit {
